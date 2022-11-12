@@ -1,11 +1,19 @@
-const startCarCount = 1000;
-const minCarCount = 10;
-let day = 0;
-let currentCarCount = startCarCount;
-
-while (currentCarCount > minCarCount) {
-    currentCarCount = Math.round (currentCarCount / 2);
-    day++;
+const userOne = {
+    role: 'admin',
+    firstname: 'Дмитрий',
 }
 
-console.log('Через ${day}.....');
+function checkAccess (user, role){
+    if (user.role === role){
+        return true;
+    }
+    return false;
+}
+
+function showSuccessMessage (){
+
+}
+
+if (checkAccess(userOne, 'admin')){
+    showSuccessMessage();
+}
